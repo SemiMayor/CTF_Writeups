@@ -4,6 +4,8 @@ Category - Web
 Points - 50  
 Author - @0000matteo0000  
 
+This is the easiest challenge in m0lecon Teaser 2023
+
 ## TL;DR
 Just order negative amount of pizzas to get extra money. Check the WebSocket history using Burp Suite after ordering the golden pizza to get the flag.
 
