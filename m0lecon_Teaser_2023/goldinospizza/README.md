@@ -20,7 +20,7 @@ Obviously, we need to buy the golden pizza. But we don't have enough money.
 If we order the golden pizza, our balance would drop to negative and a message would pop out, warning us not to steal pizzas.
 If we order other pizzas, an order would appear on top of the page with a cancel button.
 
-## Source analysis
+## Source code analysis
 To better understand how the webpage work, I go inspect the source. There are several python files in the folder
 ```
 api.py  auth.py  models  requirements.txt  server.py  static  templates  website.py
