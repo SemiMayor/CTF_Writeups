@@ -1,8 +1,8 @@
 # ptmCommandExecutor (m0lecon Teaser 2023 CTF)
-Description - Do I have RCE on this?
-Category - misc
-Points - 72
-Author - @matpro
+Description - Do I have RCE on this?  
+Category - misc  
+Points - 72  
+Author - @matpro  
 
 This is the second easiest challenges in m0lecon Teaser 2023, but I wasn't able to solve it. Below is what I've learnt after the end of the competition. 
 
