@@ -74,7 +74,7 @@ Inspecting the `ExecuteCommand()` function, the most important part I noticed is
       exit(1);
     }
 ```
-The `compare_str` function is complicated, but basically it makes use of the `strcmp` function in library to check whether the strings are equal. If so, it will print out "Admin permission necessary" and kick you out. So the key is to bypass this check so that your command will be executed.
+The `compare_str` function is complicated, but basically it makes use of the `strcmp` function in C++ library to check whether the strings are equal. If so, it will print out "Admin permission necessary" and kick you out. So the key is to bypass this check so that your command will be executed.
 
 Since C++ strings are not null-terminated, putting in "get_flag\0" will be considered as a different string from "get_flag", allowing you to bypass the check.
 
