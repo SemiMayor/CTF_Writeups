@@ -9,7 +9,7 @@ This is the second easiest challenges in m0lecon Teaser 2023, but I wasn't able 
 ## Basic analysis
 The ptmCommandExecutor program asks for command input (3 commands are accepted, including: get_flag, ls, and lp, but access is restricted for get_flag) and executes it.  
 
-<b>(Insert photo here)</b>
+![](ptm1.png)
 
 ## Solution
 get_flag\x00 (The null byte should be typed in directly)
@@ -28,7 +28,7 @@ I tried commands like ltrace, strace, strings on the binary file, but didn't fin
 ## Reverse Engineering
 I used ghidra, an open-source reverse engineering software to reverse the file.
 
-<b>(Image here)</b>
+![](ptm_rev1.png)
 
 The first thing to do to reverse a file is to find the main function. Since the debugging symbols are stripped, we would find nothing by searching for 'main'. But for a ELF file, the program code is always stored in the '.text' section, so we can start from there. You can see that in the 'Program Trees' panel in the upper-left corner, those in the panel are headers in the file.
 
