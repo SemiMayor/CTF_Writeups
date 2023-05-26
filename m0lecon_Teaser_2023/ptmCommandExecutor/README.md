@@ -79,6 +79,6 @@ The `compare_str` function is complicated, but basically it makes use of the `st
 Since C++ strings are not null-terminated, putting in "get_flag\0" will be considered as a different string from "get_flag", allowing you to bypass the check.
 
 ## Remarks
-I wasn't sure why "get_flag\0" can be executed normally instead of being considered as an unknown command, I am not able to reverse that part as well.  
-Probably in the execution part it accepts null-terminated string.  
+I wasn't sure why "get_flag\0" can be executed normally instead of being considered as an unknown command, I am not able to reverse that part as well. Probably in the execution part it accepts null-terminated string.
+
 I guess the important thing is, not all strings are null-terminated.
