@@ -32,4 +32,35 @@ I used ghidra, an open-source reverse engineering software to reverse the file.
 
 The first thing to do to reverse a file is to find the main function. Since the debugging symbols are stripped, we would find nothing by searching for 'main'. But for a ELF file, the program code is always stored in the '.text' section, so we can start from there. You can see that in the 'Program Trees' panel in the upper-left corner, those in the panel are headers in the file.
 
-In the middle panels, we have the disassembled code, these are called the assembly code. It's not easy to understand them, but we can focus on the calls and jumps in the assembly code, which outline the structure of the program. Since main is usually the first function called in a program, the first function called here (look at the highlighted line) is usually the main function. But notice that it is not directly calling the main function, but instead calls `__libc_start_main` which takes the address of the main function as a parameter.
+In the middle panel, we have the disassembled code, these are called the assembly code. It's not easy to understand them, but we can focus on the calls and jumps in the assembly code, which outline the structure of the program. Since main is usually the first function called in a program, the first function called here (look at the highlighted line) is usually the main function. But notice that it is not directly calling the main function, but instead calls `__libc_start_main` which takes the address of the main function as a parameter. The 3 instructions before the `call` is loading the parameters, and the last one is the main function (I've renamed it to 'main' for clarity). Click on it, we can inspect the decompiled code on the right panel
+
+```
+undefined8 main(void)
+
+{
+  time_t tVar1;
+  int local_c;
+  
+  local_c = -1;
+  tVar1 = time((time_t *)0x0);
+  srand((uint)tVar1);
+  FUN_001037ec();
+  FUN_00102984();
+  while (local_c != 3) {
+    local_c = FUN_00103def();
+    if (local_c == 3) {
+      FUN_001029c8();
+    }
+    else if (local_c < 4) {
+      if (local_c == 1) {
+        ExecuteCommand();
+      }
+      else if (local_c == 2) {
+        FUN_00103a78();
+      }
+    }
+  }
+  return 0;
+}
+```
+So it takes an input, check whether it is 1, 2, or 3, and then execute something. Obviously we are interested in the `ExecuteCommand()` function (again I've renamed it, so it is not like FUN_00xxxx).
