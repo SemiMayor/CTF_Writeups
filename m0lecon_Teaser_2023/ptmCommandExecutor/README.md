@@ -8,6 +8,7 @@ This is the second easiest challenges in m0lecon Teaser 2023, but I wasn't able 
 
 ## Basic analysis
 The ptmCommandExecutor program asks for command input (3 commands are accepted, including: get_flag, ls, and lp, but access is restricted for get_flag) and executes it.  
+
 <b>(Insert photo here)</b>
 
 ## Solution
@@ -25,3 +26,10 @@ ptmCommandExecutor: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dyn
 I tried commands like ltrace, strace, strings on the binary file, but didn't find anything suspicious. So a full reverse is needed to figure out how the program works.
 
 ## Reverse Engineering
+I used ghidra, an open-source reverse engineering software to reverse the file.
+
+<b>(Image here)</b>
+
+The first thing to do to reverse a file is to find the main function. Since the debugging symbols are stripped, we would find nothing by searching for 'main'. But for a ELF file, the program code is always stored in the '.text' section, so we can start from there. You can see that in the 'Program Trees' panel in the upper-left corner, those in the panel are headers in the file.
+
+In the middle panels, we have the disassembled code, these are called the assembly code. It's not easy to understand them, but we can focus on the calls and jumps in the assembly code, which outline the structure of the program. Since main is usually the first function called in a program, the first function called here (look at the highlighted line) is usually the main function. But notice that it is not directly calling the main function, but instead calls `__libc_start_main` which takes the address of the main function as a parameter.
