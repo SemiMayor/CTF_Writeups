@@ -7,7 +7,7 @@ Author - @matpro
 This is the second easiest challenges in m0lecon Teaser 2023, but I wasn't able to solve it. Below is what I've learnt after the end of the competition. 
 
 ## Basic analysis
-The ptmCommandExecutor program asks for command input (3 commands are accepted, including: get_flag, ls, and lp, but access is restricted for get_flag) and executes it. 
+The ptmCommandExecutor program asks for command input (3 commands are accepted, including: get_flag, ls, and lp, but access is restricted for get_flag) and executes it.  
 <b>(Insert photo here)</b>
 
 ## Solution
