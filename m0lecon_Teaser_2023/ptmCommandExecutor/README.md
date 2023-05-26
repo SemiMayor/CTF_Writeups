@@ -12,7 +12,7 @@ The ptmCommandExecutor program asks for command input (3 commands are accepted, 
 ![](ptm1.png)
 
 ## Solution
-get_flag\x00 (The null byte should be typed in directly)
+get_flag\0 (The null byte should be typed in directly)
 
 ## My attempt
 The solution above is provided by others after the end of the competition, but they didn't create any writeups or explain how they get the solution. So I try to figure it out on my own (spoiler: it wasn't completely successful):
@@ -64,3 +64,21 @@ undefined8 main(void)
 }
 ```
 So it takes an input, check whether it is 1, 2, or 3, and then execute something. Obviously we are interested in the `ExecuteCommand()` function (again I've renamed it, so it is not like FUN_00xxxx).
+
+Inspecting the `ExecuteCommand()` function, the most important part I noticed is (Some renaming is done on the variables and functions)
+```
+    cVar1 = compare_str(input_cmd,"get_flag");
+    if (cVar1 != '\0') {
+      std::operator<<((basic_ostream *)std::cout,"Admin permission necessary\n");
+                    /* WARNING: Subroutine does not return */
+      exit(1);
+    }
+```
+The `compare_str` function is complicated, but basically it makes use of the `strcmp` function in library to check whether the strings are equal. If so, it will print out "Admin permission necessary" and kick you out. So the key is to bypass this check so that your command will be executed.
+
+Since C++ strings are not null-terminated, putting in "get_flag\0" will be considered as a different string from "get_flag", allowing you to bypass the check.
+
+## Remarks
+I wasn't sure why "get_flag\0" can be executed normally instead of being considered as an unknown command, I am not able to reverse that part as well.  
+Probably in the execution part it accepts null-terminated string.  
+I guess the important thing is, not all strings are null-terminated.
