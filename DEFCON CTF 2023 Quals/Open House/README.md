@@ -173,6 +173,8 @@ create(b"/bin/sh")
 p.interactive()
 ```
 
+![](hack.png)
+
 Note that the code only works locally, because I'm working on it after the end of the competition.
 According to the references, however, the libc version of the remote host is probably not found in many libc databases.
 So the solution here is considerably easier than what is needed actually if you are unable to figure out the libc version.
