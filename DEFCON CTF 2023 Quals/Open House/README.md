@@ -179,7 +179,7 @@ So the solution here is considerably easier than what is needed actually if you 
 
 Final notes:  
 I didn't make it clear how to find the address of the GOT or of system().
-To put it simple, you can get the memory map by debugging the program with gdb.
+To put it simple, you can get the memory map and find the GOT address by debugging the program with gdb.
 The offsets works even in a remote host, because they're fixed (but not for the heap becuz of randomization).
 To find system() address, we need to know the libc version first.
 The offsets to a particular function is fixed for a given libc version.
