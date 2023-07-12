@@ -11,7 +11,7 @@ Quote from the authors
 > 
 > The original version of this challenge was pretty trivially solvable by ChatGPT, so I made it more difficult before its release and added a bunch of random comments and changed a bunch of variable names to make doing that take more time. We'll see if I was successful or not.
 
-I didn't work on this challenge because I was too focuesed on openhouse. Just a few hours before the end of the competition, I realized that there are challenges
+I didn't work on this challenge because I was too focused on openhouse. Just a few hours before the end of the competition, I realized that there are challenges
 easier than openhouse. But it was too late to work on this one.
 
 This is a straight forward reverse challenge, all you need to do is understand the python code and write a code that does the opposite,
