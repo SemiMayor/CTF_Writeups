@@ -58,4 +58,9 @@ Maybe there are better ways than to make a new program, but this is what I came 
 I do not show the decompression code or explain how to write it, because it is not particularly difficult.
 Just need a clear understanding of how the file is compressed, and come up with a strategy to reverse it.
 
+I recommend
+https://lephuduc.github.io/posts/defconquals2023/
+for more details about how the code works and how to decompress it.
+
 Here's the flag:
+![](flag.png)
