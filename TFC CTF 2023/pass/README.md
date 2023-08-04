@@ -53,8 +53,9 @@ If the character is { or }, change it to 0x5a ("Z"), otherwise, encrypt the char
 
 So to decrypt, just do the following on every character in flag[i*26] for i from 0 to 24:  
 `char = xor(newchar, 0xb) - 0x7`
+No worry about the { and }, as they are easy to spot after decrypting the others.
 
-The { and } are easy to spot after decrypting the others.
+The correct password is the real flag.
 
 Flag:
 TFCCTF{f0und_th3_p44sv0rd}
