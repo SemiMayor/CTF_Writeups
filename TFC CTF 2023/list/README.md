@@ -1,7 +1,8 @@
 # LIST
 
-This is the warmup forensic challenge, but you may need some knowledge about network traffic and wireshark. You're given a .pcap file and almost nothing in description to guild you.
-.pcap is a network capture file. One can open it with wireshark, and you can read the network traffic recorded in it.
+This is an easy forensic challenge, but you may need some knowledge about network traffic and wireshark.
+You're given a .pcap file and almost nothing in description to guild you.
+pcap is a network capture file. You can open it with wireshark, and you can read the network traffic recorded in it.
 
 ## Analysis
 
