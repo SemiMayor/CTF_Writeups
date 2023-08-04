@@ -2,7 +2,7 @@
 
 This is an easy forensic challenge, but you may need some knowledge about network traffic and wireshark.
 You're given a .pcap file and almost nothing in description to guild you.
-pcap is a network capture file. You can open it with wireshark, and you can read the network traffic recorded in it.
+pcap is a network capture file. You can open it with wireshark and read the network traffic recorded in it.
 
 ## Analysis
 
