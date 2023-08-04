@@ -39,8 +39,8 @@ void main(void)
 }
 ```
 
-Basically, it takes an input, run encrypt(), and then check each character if it matches with the flag[i*26], if not, say "Wrong password".
-If the all characters of the string matches with flag[i*26], say "Correct password".
+Basically, it takes an input, run encrypt(), and then check each character if it matches with the flag[i * 26], if not, say "Wrong password".
+If the all characters of the string matches with flag[i * 26], say "Correct password".
 
 The encrypt function somehow cannot be decompiled properly, and we have to look at the assembly code.
 
